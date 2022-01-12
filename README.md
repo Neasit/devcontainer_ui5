@@ -14,10 +14,12 @@ This definition includes some test code that will help you verify it is working 
 2. Clone this repository.
 4. Start VS Code, press <kbd>F1</kbd>, and select **Remote-Containers: Open Folder in Container...**
 5. Select the `$(pwd)` folder.
-6. After the folder has opened in the container, open console and run the commands `npm install` then `ui5 serve` to start the project.
-7. Once the project is running, press <kbd>F1</kbd> and select **Remote-Containers: Forward Port from Container...**
-8. Select port 3010 and click the "Open Browser" button in the notification that appears.
-9. You should see "Example application" after the page loads.
+6. After the folder has opened in the container, open console and run the commands `npm install` to install project dependencies.
+7. Create `.env` file in `$(pwd)` based on example `.env.example`.
+8. Run the command `ui5 serve` to start the project.
+9. Once the project is running, press <kbd>F1</kbd> and select **Remote-Containers: Forward Port from Container...**
+10. Select port 3010 and click the "Open Browser" button in the notification that appears.
+11. You should see "Example application" after the page loads.
 
 ## License
 
