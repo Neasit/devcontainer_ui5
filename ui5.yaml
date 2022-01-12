@@ -1,0 +1,40 @@
+specVersion: '2.0'
+metadata:
+  name: app.example
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: webapp
+builder:
+  customTasks:
+  - name: ui5-task-transpile
+    afterTask: replaceVersion
+    configuration:
+      debug: false
+      removeConsoleStatements: true
+      transpileAsync: true
+      excludePatterns:
+      - "lib/"
+server:
+  customMiddleware:
+    - name: ui5-middleware-proxy
+      afterMiddleware: compression
+      mountPath: /sap
+      configuration:
+        debug: false
+  settings:
+    httpPort: 3010
+framework:
+  name: SAPUI5
+  version: 1.94.1
+  libraries: 
+    - name: sap.f
+    - name: sap.m
+    - name: sap.tnt
+    - name: sap.ui.comp
+    - name: sap.ui.core
+    - name: sap.ui.table
+    - name: sap.ushell
+    - name: themelib_sap_belize
+
